@@ -1,9 +1,18 @@
-import React from "react";
-import "./App.css";
-import DashBoard from "./features/covid/DashBoard/DashBoard";
+import React from 'react';
+import { Router, Route } from 'react-router-dom';
+import * as H from 'history';
+import DashBoard from './features/covid/DashBoard/DashBoard';
 
-function App() {
-  return <DashBoard />;
-}
+const defaultHistory = H.createBrowserHistory();
+
+const App: ({ history }: { history?: H.History }) => JSX.Element = ({
+  history = defaultHistory,
+}) => {
+  return (
+    <Router history={history}>
+      <Route exact path="/world" component={DashBoard} />
+    </Router>
+  );
+};
 
 export default App;

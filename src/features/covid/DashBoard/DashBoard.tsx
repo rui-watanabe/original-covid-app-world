@@ -8,8 +8,8 @@ import {
   Container,
   Grid,
 } from "@material-ui/core";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchAsyncGet, fetchAsyncGetDaily, selectData } from "../covidSlice";
+import { useDispatch } from "react-redux";
+import { fetchAsyncGet, fetchAsyncGetDaily } from "../covidSlice";
 import SwitchCountry from "../SwitchCountry/SwitchCountry";
 import Chart from "../Chart/Chart";
 import PieChart from "../PieChart/PieChart";

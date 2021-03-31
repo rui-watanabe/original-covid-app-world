@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import styles from "./DashBoard.module.css";
 import { makeStyles } from "@material-ui/core/styles";
 import {
-  // AppBar,
-  // Toolbar,
-  // Typography,
+  AppBar,
+  Toolbar,
+  Typography,
   Container,
   Grid,
 } from "@material-ui/core";
-import { useDispatch } from "react-redux";
-import { fetchAsyncGet, fetchAsyncGetDaily } from "../covidSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAsyncGet, fetchAsyncGetDaily, selectData } from "../covidSlice";
 import SwitchCountry from "../SwitchCountry/SwitchCountry";
 import Chart from "../Chart/Chart";
 import PieChart from "../PieChart/PieChart";
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 const DashBoard: React.FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  // const data = useSelector(selectData);
+  const data = useSelector(selectData);
 
   useEffect(() => {
     dispatch(fetchAsyncGet());
@@ -34,7 +34,7 @@ const DashBoard: React.FC = () => {
 
   return (
     <>
-      {/* <AppBar position="absolute">
+      <AppBar position="absolute">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             ORIGINAL COVID APP WORLD
@@ -45,7 +45,7 @@ const DashBoard: React.FC = () => {
             </Typography>
           )}
         </Toolbar>
-      </AppBar> */}
+      </AppBar>
       <Container className={classes.content}>
         <div className={styles.container}>
           <SwitchCountry />

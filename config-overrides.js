@@ -1,3 +1,5 @@
+const rewireCssModules = require('react-app-rewire-css-modules');
+
 module.exports = {
   webpack: (config, env) => {
     config.optimization.runtimeChunk = false;

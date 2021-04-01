@@ -9,8 +9,6 @@ const Chart: React.FC = () => {
   const dataDaily = useSelector(selectDataDaily);
   const country = useSelector(selectCountry);
 
-  console.log(dataDaily);
-
   const barChart = data && (
     <Bar
       data={{

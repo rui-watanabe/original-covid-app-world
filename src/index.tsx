@@ -27,8 +27,8 @@ window.renderWorld = (containerId, history) => {
   serviceWorker.unregister();
 };
 
-window.unmountWorld = (containerId) => {
-  ReactDOM.unmountComponentAtNode(
-    document.getElementById(containerId) as HTMLElement
-  );
-};
+// window.unmountWorld = (containerId) => {
+//   ReactDOM.unmountComponentAtNode(
+//     document.getElementById(containerId) as HTMLElement
+//   );
+// };

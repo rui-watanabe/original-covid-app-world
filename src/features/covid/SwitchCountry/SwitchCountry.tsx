@@ -16,6 +16,10 @@ const SwitchCountry: React.FC = () => {
   const dispatch = useDispatch();
 
   const countries = {
+    japan: {
+      ja: "日本",
+      en: "japan",
+    },
     china: {
       ja: "中国",
       en: "china",
@@ -79,7 +83,7 @@ const SwitchCountry: React.FC = () => {
           dispatch(fetchAsyncGetCountry(e.target.value))
         }
       >
-        <option value="">Worldwide</option>
+        <option value="">世界の感染者データ</option>
         {countyKeyArray.map((countryKey, i) => (
             <option key={i} value={countries[countryKey].en}>
               {countries[countryKey].ja}

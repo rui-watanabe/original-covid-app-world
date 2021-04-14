@@ -22,6 +22,13 @@ const useStyles = makeStyles((theme) => ({
   content: { marginTop: 85 },
 }));
 
+const formatDate = (date: Date) => {
+  const Y = date.getFullYear()
+  const M = ("00" + (date.getMonth()+1)).slice(-2);
+  const D = ("00" + date.getDate()).slice(-2);
+  return `${Y}年${M}月${D}日`;
+}
+
 const DashBoard: React.FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -41,7 +48,7 @@ const DashBoard: React.FC = () => {
           </Typography>
           {data && (
             <Typography variant="body1">
-              {new Date(data.lastUpdate).toDateString()}
+              {formatDate(new Date(data.lastUpdate))}更新
             </Typography>
           )}
         </Toolbar>

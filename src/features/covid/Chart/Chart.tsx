@@ -12,7 +12,7 @@ const Chart: React.FC = () => {
   const barChart = data && (
     <Bar
       data={{
-        labels: ["Infected", "Recovered", "Deaths"],
+        labels: ["感染者数", "回復者数", "死者数"],
         datasets: [
           {
             label: "People",
@@ -43,13 +43,13 @@ const Chart: React.FC = () => {
         datasets: [
           {
             data: dataDaily.map((data) => data.confirmed.total),
-            label: "Infected",
+            label: "感染者数推移",
             borderColor: "#3333ff",
             fill: true,
           },
           {
             data: dataDaily.map((data) => data.deaths.total),
-            label: "Deaths",
+            label: "死者数推移",
             borderColor: "#ff3370",
             fill: true,
           },

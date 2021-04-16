@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { NativeSelect, FormControl } from "@material-ui/core";
 import { useDispatch } from "react-redux";
-import { fetchAsyncGetCountry } from "../covidSlice";
+import { fetchAsyncGet, fetchAsyncGetCountry } from "../covidSlice";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -14,8 +14,11 @@ const useStyles = makeStyles((theme) => ({
 const SwitchCountry: React.FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-
   const countries = {
+    japan: {
+      ja: "日本",
+      en: "japan",
+    },
     china: {
       ja: "中国",
       en: "china",
@@ -69,8 +72,11 @@ const SwitchCountry: React.FC = () => {
       en: "india",
     },
   };
+  const countyKeyArray = Object.keys(countries) as (keyof typeof countries)[];
 
-  const countyKeyArray = Object.keys(countries) as (keyof typeof countries)[];;
+  useEffect(() => {
+    dispatch(fetchAsyncGetCountry(""));
+  }, [dispatch]);
 
   return (
     <FormControl className={classes.formControl}>
@@ -79,7 +85,7 @@ const SwitchCountry: React.FC = () => {
           dispatch(fetchAsyncGetCountry(e.target.value))
         }
       >
-        <option value="">Worldwide</option>
+        <option value="">世界の感染者データ</option>
         {countyKeyArray.map((countryKey, i) => (
             <option key={i} value={countries[countryKey].en}>
               {countries[countryKey].ja}

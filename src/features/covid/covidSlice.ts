@@ -9,7 +9,7 @@ const apiUrl = "https://covid19.mathdro.id/api";
 type APIDATA = typeof dataJson;
 type APIDATADAILY = typeof dataJsonDaily;
 
-type covidState = {
+export type covidState = {
   data: APIDATA;
   country: string;
   dataDaily: APIDATADAILY;

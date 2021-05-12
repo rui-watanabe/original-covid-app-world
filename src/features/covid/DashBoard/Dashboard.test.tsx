@@ -18,7 +18,7 @@ describe('DashBoard rendering test', () => {
       },
     });
   });
-it('Should render the elements correctly', () => {
+  it('Should render the elements correctly', () => {
     render(
       <Provider store={store}>
         <DashBoard />

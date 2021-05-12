@@ -6,8 +6,8 @@ import dataJsonDaily from "./dataDaily.json";
 
 const apiUrl = "https://covid19.mathdro.id/api";
 
-type APIDATA = typeof dataJson;
-type APIDATADAILY = typeof dataJsonDaily;
+export type APIDATA = typeof dataJson;
+export type APIDATADAILY = typeof dataJsonDaily;
 
 export type covidState = {
   data: APIDATA;

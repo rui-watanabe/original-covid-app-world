@@ -42,7 +42,7 @@ export const fetchAsyncGetCountry = createAsyncThunk(
       dynamicUrl = `${apiUrl}/countries/${country}`;
     }
     const { data } = await axios.get<APIDATA>(dynamicUrl);
-    return { data: data, country: country };
+    return { data, country };
   }
 );
 

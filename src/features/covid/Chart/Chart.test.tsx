@@ -40,14 +40,12 @@ describe('Chart rendering test', () => {
   })
   it('Should render the Bar Chart elements correctly', () => {
     render(<Chart />);
-    screen.debug();
     expect(screen.getByText(/Bar/)).toBeInTheDocument(); // find~は結果が反映されるまでまつ
   });
   
   it('Should render the Line Chart elements correctly', () => {
 
     render(<Chart />);
-    screen.debug();
     expect(screen.getByText(/Line/)).toBeInTheDocument(); // find~は結果が反映されるまでまつ
   });
 });

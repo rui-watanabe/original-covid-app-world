@@ -6,10 +6,10 @@ import dataJsonDaily from "./dataDaily.json";
 
 const apiUrl = "https://covid19.mathdro.id/api";
 
-type APIDATA = typeof dataJson;
-type APIDATADAILY = typeof dataJsonDaily;
+export type APIDATA = typeof dataJson;
+export type APIDATADAILY = typeof dataJsonDaily;
 
-type covidState = {
+export type covidState = {
   data: APIDATA;
   country: string;
   dataDaily: APIDATADAILY;
@@ -42,7 +42,7 @@ export const fetchAsyncGetCountry = createAsyncThunk(
       dynamicUrl = `${apiUrl}/countries/${country}`;
     }
     const { data } = await axios.get<APIDATA>(dynamicUrl);
-    return { data: data, country: country };
+    return { data, country };
   }
 );
 

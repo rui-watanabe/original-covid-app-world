@@ -9,10 +9,10 @@ ARG APP_HOME
 
 WORKDIR ${APP_HOME}
 COPY package*.json ${APP_HOME}/
-RUN yarn install
+RUN npm install
 
 COPY . .
-RUN yarn build
+RUN npm run build
 
 # deploy stage
 FROM nginx:${NGINX_TAG}

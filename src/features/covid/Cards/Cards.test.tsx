@@ -25,7 +25,6 @@ it('Should render the elements correctly', () => {
       </Provider>
     );
     expect(screen.getByText(/感染者数/)).toBeInTheDocument(); 
-    expect(screen.getByText(/回復者数/)).toBeInTheDocument(); 
     expect(screen.getByText(/死者数/)).toBeInTheDocument();
   });
 });

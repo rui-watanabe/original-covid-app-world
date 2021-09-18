@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-18.04
     env:
       DOCKER_IMAGE_NAME: original-covid-app-world
+      REACT_APP_API_HOST: { secrets.REACT_APP_API_HOST }
     steps:
       - name: Check out source code
         uses: actions/checkout@v1

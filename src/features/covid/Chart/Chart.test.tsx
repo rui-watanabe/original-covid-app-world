@@ -9,7 +9,7 @@ import dataJsonDaily from "../dataDaily.json";
 jest.mock('react-redux');
 jest.mock('react-chartjs-2', () => ({
   Bar: () => <div>Bar</div>,
-  Line: () => <div>Line</div>,
+  // Line: () => <div>Line</div>,
 }))
 const useSelectorMock = useSelector as jest.Mock<APIDATA | APIDATADAILY | string>;
 const useDispatchMock = useDispatch as jest.Mock;
@@ -43,9 +43,9 @@ describe('Chart rendering test', () => {
     expect(screen.getByText(/Bar/)).toBeInTheDocument(); // find~は結果が反映されるまでまつ
   });
   
-  it('Should render the Line Chart elements correctly', () => {
+  // it('Should render the Line Chart elements correctly', () => {
 
-    render(<Chart />);
-    expect(screen.getByText(/Line/)).toBeInTheDocument(); // find~は結果が反映されるまでまつ
-  });
+  //   render(<Chart />);
+  //   expect(screen.getByText(/Line/)).toBeInTheDocument(); // find~は結果が反映されるまでまつ
+  // });
 });

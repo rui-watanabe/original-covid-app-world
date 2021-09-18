@@ -4,8 +4,7 @@ import { RootState } from "../../app/store";
 import dataJson from "./data.json";
 import dataJsonDaily from "./dataDaily.json";
 
-const apiUrl = "https://covid19.mathdro.id/api";
-
+const apiUrl = process.env.REACT_APP_API_HOST;
 export type APIDATA = typeof dataJson;
 export type APIDATADAILY = typeof dataJsonDaily;
 

@@ -26,7 +26,7 @@ describe('DashBoard rendering test', () => {
     );
 
     expect(screen.getByText(/ORIGINAL COVID APP WORLD/)).toBeInTheDocument(); 
-    expect(screen.getByText(/世界の感染者データ/)).toBeInTheDocument(); 
+    expect(screen.getByText(/日本/)).toBeInTheDocument(); 
     expect(screen.getByText(/致死率/)).toBeInTheDocument();
     expect(screen.getByText(/感染者数/)).toBeInTheDocument();
 

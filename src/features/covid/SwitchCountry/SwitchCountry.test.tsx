@@ -24,6 +24,6 @@ describe('SwitchCountry rendering test', () => {
         <SwitchCountry />
       </Provider>
     );
-    expect(screen.getByText(/世界の感染者データ/)).toBeInTheDocument(); // find~は結果が反映されるまでまつ
+    expect(screen.getByText(/日本/)).toBeInTheDocument(); // find~は結果が反映されるまでまつ
   });
 });
